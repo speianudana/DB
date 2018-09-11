@@ -10,7 +10,7 @@ de 128MB și a log-ului de 64 MB cu limita de creștere de 1024 MB.Pentru fișie
 <img src = "3.png"/>
 <img src = "4.png"/>
 
-3.Creați planul de întreținere a bazei de date, construită în sarcina I. Spațiul neutilizat de fișierele bazei de date trebuie îndepartat atunci cand el atinge marimea 2000Mb. Spațiul eliberat trebuie sa fie returnat sistemului de operare. Aceasta operatiune trebuie sa ruleze în fiecare vineri, la ora 00:00. Raportul executarii planului de lntretinere trebuie salvat in docarul MyDocuments\SQL _event_logs. Inițializați executarea planului. Dupa executare, verificati rezultatele în fișierul log. 
+3.Creați planul de întreținere a bazei de date, construită în sarcina I. Spațiul neutilizat de fișierele bazei de date trebuie îndepartat atunci cand el atinge marimea 2000Mb. Spațiul eliberat trebuie sa fie returnat sistemului de operare. Aceasta operatiune trebuie sa ruleze în fiecare vineri, la ora 00:00. Raportul executarii planului de lntretinere trebuie salvat in dosarul MyDocuments\SQL _event_logs. Inițializați executarea planului. Dupa executare, verificati rezultatele în fișierul log. 
 <img src = "5.png"/>
 <img src = "6.png"/>
 
