@@ -6,7 +6,7 @@ de 128MB și a log-ului de 64 MB cu limita de creștere de 1024 MB.Pentru fișie
 <img src = "1.png"/>
 <img src = "2.png"/>
 
-2.Creați o bază de date, unde fișierul log sa fie fizic plasat în mapa MyDocuments\Log, numele fi~ierului log in mediul sistemului de operare trebuie sa se deosebească de cel logic definit în schema fizică. Este important ca baza de date creată să fie compatibilă cu sistemul MS SQL Server 2017 și ea să fie accesibilă numai unui singur utilizator într-un moment de timp.
+2.Creați o bază de date, unde fișierul log sa fie fizic plasat în mapa MyDocuments\Log, numele fișierului log în mediul sistemului de operare trebuie sa se deosebească de cel logic definit în schema fizică. Este important ca baza de date creată să fie compatibilă cu sistemul MS SQL Server 2017 și ea să fie accesibilă numai unui singur utilizator într-un moment de timp.
 <img src = "3.png"/>
 <img src = "4.png"/>
 
