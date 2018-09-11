@@ -60,6 +60,8 @@ Inițializăm executarea planului:
    <img src = "24.png"/>
    <img src = "25.png"/>
    <img src = "26.png"/>
+   <img src = "27.png"/>
+
 
 
 
