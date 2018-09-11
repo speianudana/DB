@@ -43,7 +43,7 @@ Inițializăm executarea planului:
  <img src = "17.png"/>
  
  Al treilea pas al planului trebuie să constituie sarcina de ștergere a istoriei despre operatiile de Backup-Restore ce au avut loc pe SQL Server. Trebuie șters istoricul care este mai vechi de 6 saptamani. 
-  <img src = "18.png"/>
+ <img src = "18.png"/>
  
  Spațiul liber pe pagina trebuie să fie 10%.Sortarea indecșilor trebuie să se realizeze în tempdb.
   <img src = "19.png"/>
@@ -55,9 +55,9 @@ Inițializăm executarea planului:
    <img src = "23.png"/>
   
  Inițializăm executarea planului:
-      <img src = "24.png"/>
-      <img src = "25.png"/>
-      <img src = "26.png"/>
+   <img src = "24.png"/>
+   <img src = "25.png"/>
+   <img src = "26.png"/>
 
 
 
