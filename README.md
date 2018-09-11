@@ -24,7 +24,8 @@ Deoarece noi trebuie să restrîngem spațiul de utilizare pentru baza de date,n
 Selectăm baza de date pentru care vrem să reducem spațiul de utilizare:
 <img src = "10.png"/>
 
-Spațiul utilizat de fișierele  bazei de date trebuie îndepărtat  atunci cînd el atinge mărime 2000 Mb. Spațiul eliberat trebuie sa fie returnat sistemului de operare.
+Spațiul utilizat de fișierele  bazei de date trebuie îndepărtat  atunci cînd el atinge mărime 2000 Mb.Spațiul eliberat trebuie sa fie returnat sistemului de operare.
+
 <img src = "11.png"/>
 
 Raportul executarii planului de întreținere trebuie salvat in docarul MyDocuments\SQL _event_logs:
@@ -55,6 +56,7 @@ Inițializăm executarea planului:
    <img src = "23.png"/>
   
  Inițializăm executarea planului:
+ 
    <img src = "24.png"/>
    <img src = "25.png"/>
    <img src = "26.png"/>
