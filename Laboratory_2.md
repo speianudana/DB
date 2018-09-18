@@ -28,4 +28,4 @@ afară de aceasta, tabelul respectiv conține date despre identificatorul studen
 identificatorul disciplinei (ld_Disciplina), identificatorul profesorului (ld_ Profesor), identificatorul grupei
 (Id_ Grupa) și tipul de evaluare (Tip_Evaluare), care împreună constituie cheia primară a tabelului.
 
-<img src = "10.jpg"/>
+<img src = "11.PNG"/>
