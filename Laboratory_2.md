@@ -18,7 +18,7 @@ ca identificatorul disciplinei este unic pentru fiecare disciplină și numărul
 numele studentului (Nume_Student), prenumele studentului (Prenume_Student), data de naștere a
 studentului (Data_Nastere_Student) și adresa poștala a studentului (Adresa_Postala_Student). 
 
-    Tabelul "profesori" este asemănător tabelului despre studenți și conține, pentru fiecare identificator
+   Tabelul "profesori" este asemănător tabelului despre studenți și conține, pentru fiecare identificator
 unic al profesorului (ld_Profesor), numele profesorului (Nume_Profesor), prenumele profesorului
 (Prenume_Profesor) și adresa poștală a profesorului (Adresa_Postala_Profesor).
     In tabelul grupe, pentru fiecare identificator unic al grupei (Id_ Grupa), este indicat codul grupei
@@ -28,4 +28,4 @@ afară de aceasta, tabelul respectiv conține date despre identificatorul studen
 identificatorul disciplinei (ld_Disciplina), identificatorul profesorului (ld_ Profesor), identificatorul grupei
 (Id_ Grupa) și tipul de evaluare (Tip_Evaluare), care împreună constituie cheia primară a tabelului.
 
-<img src = "10.jpg"/>
+<img src = "10.jpg">
