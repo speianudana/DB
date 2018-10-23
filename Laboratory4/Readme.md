@@ -1,9 +1,9 @@
-##Laboratory 4
+## Laboratory 4
 
-###I have done the queries number 6,17,26,35,38.
+### I have done the queries number 6,17,26,35,38.
 
 6.Afișați numele și prenumele primilor 5 studenți, care au obținut note în ordine descrescătoare la al doilea test de la disciplina Baze de date.
-```
+``` sql
 SELECT TOP(5) WITH TIES Nume_Student,Prenume_Student, Nota
 FROM studenti s
 INNER JOIN studenti_reusita r
