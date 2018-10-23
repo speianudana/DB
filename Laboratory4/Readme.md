@@ -14,7 +14,7 @@ WHERE Disciplina='Baze de date' AND Tip_Evaluare='Testul 2'
 ORDER BY Nota DESC
 ```
 Result:
-![Ex6][https://github.com/speianudana/DB/blob/master/Laboratory4/Screenshots_DB/ex6.PNG]
+![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory4/Screenshots_DB/ex6.PNG)
 
 
 
