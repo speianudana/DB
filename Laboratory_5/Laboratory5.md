@@ -1,7 +1,7 @@
 # Laboratory 5
 ## TRANSACT-SQL: INSTRUCTIUNI PROCEDURALE
 ### Sarcini practice
-### 1. Completati urmatorul cod pentru a afi~a eel mai mare numar dintre cele trei numere prezentate:
+### 1. Completați următorul cod pentru a afișa cel mai mare numar dintre cele trei numere prezentate:
 ``` sql
 DECLARE @N1 INT,@N2 INT,@N3 INT;
 DECLARE @MAI_MARE INT;
