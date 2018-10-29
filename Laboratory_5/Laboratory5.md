@@ -25,9 +25,7 @@ end
 ### Result:
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex1.PNG)
 
-### 2.Afișati primele zece date (numele, prenumele studentului) in functie de valoarea notei (cu exceptia
-### notelor 6 și 8) a studentului la primul test al disciplinei Baze de date , folosind structura de
-### altemativa IF. .. ELSE. Să se folosească variabilele. 
+### 2.Afișati primele zece date (numele, prenumele studentului) in functie de valoarea notei (cu excepția notelor 6 și 8) a studentului la primul test al disciplinei Baze de date , folosind structura de altenativa IF. .. ELSE. Să se folosească variabilele. 
 ``` sql
 DECLARE @Nota1 int, @Nota2 int,@TipEvaluare varchar(10),@Disciplina varchar(20);
 SET @Nota1=6;
@@ -48,7 +46,7 @@ where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
 ### Result:
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2.PNG)
 
-### 3. Rezolvati aceeași sarcina, 1, apelînd la structura selectiva CASE. 
+### 3. Rezolvati aceeași sarcină, 1, apelând la structură selectiva CASE. 
 ``` sql
 DECLARE @N1 INT,@N2 INT,@N3 INT;
 DECLARE @MAI_MARE INT;
@@ -67,8 +65,11 @@ PRINT @N2;
 PRINT @N3;
 PRINT 'Mai mare = '+CAST(@MAI_MARE AS VARCHAR(2));
 ```
-### Result
+### Result:
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex3.PNG)
+
+### 4. Modificați exercițiile din sarcinile 1 și 2 pentru a include procesarea erorilor cu TRY și CATCH, și
+RAISERRROR. 
 
 
 
