@@ -44,7 +44,7 @@ where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
                               and Nota!=@Nota1 
 			      and Nota!=@Nota2
 ```
-### Resultat:
+### Rezultat:
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2.PNG)
 
 ###Varianta cu if..else.
@@ -115,7 +115,7 @@ PRINT @N2;
 PRINT @N3;
 PRINT 'Mai mare = '+CAST(@MAI_MARE AS VARCHAR(2));
 ```
-### Resultat:
+### Rezultat:
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex3.PNG)
 
 ### 4. Modificați exercițiile din sarcinile 1 și 2 pentru a include procesarea erorilor cu TRY și CATCH, și RAISERRROR. 
@@ -157,7 +157,7 @@ RAISERROR ('Negative numbers cant have square roots',16,2,9)
 end
 end
 ```
-### Resultat:
+### Rezultat:
 ![Ex411](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex4taskex1.PNG)
 ![Ex412](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex4taskex1photo2.PNG)
 
