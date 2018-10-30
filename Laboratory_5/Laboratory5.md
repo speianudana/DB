@@ -26,6 +26,7 @@ end
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex1.PNG)
 
 ### 2.Afișati primele zece date (numele, prenumele studentului) in functie de valoarea notei (cu excepția notelor 6 și 8) a studentului la primul test al disciplinei Baze de date , folosind structura de altenativa IF. .. ELSE. Să se folosească variabilele. 
+### Varianta simplă
 ``` sql
 DECLARE @Nota1 int, @Nota2 int,@TipEvaluare varchar(10),@Disciplina varchar(20);
 SET @Nota1=6;
@@ -45,6 +46,55 @@ where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
 ```
 ### Resultat:
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2.PNG)
+
+###Varianta cu if..else.
+``` sql 
+DECLARE @Nota1 int, @Nota2 int,@TipEvaluare varchar(10),@Disciplina varchar(20),@Top int;
+SET @Nota1=6;
+SET @Nota2=8;
+SET @TipEvaluare='Testul 1';
+SET @Disciplina='Baze de date';
+SET @Top=30;
+
+if (@Nota1 not  in (Select top (@Top) Nota  from studenti s
+	inner join studenti_reusita r
+	on s.Id_Student=r.Id_Student
+	inner join discipline d
+	on d.Id_Disciplina=r.Id_Disciplina
+	where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare)
+    
+	and 
+
+	@Nota2 not in (Select top (@Top) Nota from studenti s
+	inner join studenti_reusita r
+	on s.Id_Student=r.Id_Student
+	inner join discipline d
+	on d.Id_Disciplina=r.Id_Disciplina
+	where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare))
+
+(select top(@Top) Nume_Student,Prenume_Student,Nota j
+from studenti s
+inner join studenti_reusita r
+on s.Id_Student=r.Id_Student
+inner join discipline d
+on d.Id_Disciplina=r.Id_Disciplina
+where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare)
+ 
+
+else 
+(select top(@Top) Nume_Student,Prenume_Student,Nota from  studenti s
+inner join studenti_reusita r
+on s.Id_Student=r.Id_Student
+inner join discipline d
+on d.Id_Disciplina=r.Id_Disciplina
+where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
+		                              and @Nota1!=Nota 
+					      and @Nota2!=Nota)
+```
+### Rezultat:
+![Ex23](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2var2photo1.PNG)
+![Ex24](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2var2photo2.PNG)
+![Ex25](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2var2photo3.PNG)
 
 ### 3. Rezolvati aceeași sarcină, 1, apelând la structură selectiva CASE. 
 ``` sql
