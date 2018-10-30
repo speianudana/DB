@@ -49,7 +49,7 @@ where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2photo2.PNG)
 
 
-###Varianta cu if..else.
+### Varianta folosind if..else.
 ``` sql 
 DECLARE @Nota1 int, @Nota2 int,@TipEvaluare varchar(10),@Disciplina varchar(20),@Top int;
 SET @Nota1=6;
