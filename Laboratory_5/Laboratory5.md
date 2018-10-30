@@ -163,7 +163,7 @@ end
 ![Ex411](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex4taskex1.PNG)
 ![Ex412](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex4taskex1photo2.PNG)
 
-### Pentru exercițiul 4:
+### Pentru exercițiul 2:
 ``` sql
 --4. Modificati exercitiile din sarcinile 1 și 2 pentru a include procesarea erorilor cu TRY și CATCH, și RAISERRROR. 
 BEGIN TRY
