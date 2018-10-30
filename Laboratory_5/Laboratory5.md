@@ -70,25 +70,24 @@ PRINT 'Mai mare = '+CAST(@MAI_MARE AS VARCHAR(2));
 
 ### 4. Modificați exercițiile din sarcinile 1 și 2 pentru a include procesarea erorilor cu TRY și CATCH, și RAISERRROR. 
 ``` sql
-
 BEGIN TRY
-DECLARE @N1 INT,@N2 INT,@N3 INT,@N4 int,@result decimal(3,2);
+DECLARE @N1 INT,@N2 INT,@N3 INT,@N4 int,@result decimal(3,2),@N5 int;
 DECLARE @MAI_MARE INT;
 SET @N1 = 60 * RAND();
 SET @N2 = 60 * RAND();
 SET @N3 = 60 * RAND();
-SET @N4 = 0;
-SET @result=@N1/@N4;
+SET @N5=-4;
+SET @result=sqrt(@N5);
 PRINT 'There is not any errors'
 end try
 begin catch 
 print 'There is an error'
-PRINT 'The number of error:'+CAST(ERROR_NUMBER() AS VARCHAR(20))
-PRINT 'Level ofSeverity:'+CAST(ERROR_SEVERITY() AS VARCHAR(20))
-PRINT 'The error status:'+CAST(ERROR_STATE() AS VARCHAR(20))
---PRINT ERROR_PROCEDURE()
-PRINT 'Error line:'+CAST( ERROR_LINE() AS VARCHAR(20))
-PRINT 'Error:'+CAST(ERROR_MESSAGE() AS VARCHAR(200)) 
+print 'Error information:'
+PRINT '   The number of error:'+CAST(ERROR_NUMBER() AS VARCHAR(20))
+PRINT '   Level ofSeverity:'+CAST(ERROR_SEVERITY() AS VARCHAR(20))
+PRINT '   The error status:'+CAST(ERROR_STATE() AS VARCHAR(20))
+PRINT '   Error line:'+CAST( ERROR_LINE() AS VARCHAR(20))
+PRINT '   Error:'+CAST(ERROR_MESSAGE() AS VARCHAR(200)) 
 end catch
 begin
 if (@N1>@N2) AND (@N1>@N3)
@@ -102,6 +101,10 @@ PRINT @N1;
 PRINT @N2;
 PRINT @N3;
 PRINT 'Mai mare = '+CAST(@MAI_MARE AS VARCHAR(2));
+if (@N5<0)
+begin
+RAISERROR ('Negative numbers cant have square roots',16,2,9)
+end
 end
 ```
 ### Resultat:
