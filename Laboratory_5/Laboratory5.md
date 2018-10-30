@@ -45,7 +45,9 @@ where  Disciplina=@Disciplina and Tip_Evaluare=@TipEvaluare
 			      and Nota!=@Nota2
 ```
 ### Rezultat:
-![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2.PNG)
+![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2photo1.PNG)
+![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_5/Screenshots%C8%9A_DBlab5/ex2photo2.PNG)
+
 
 ###Varianta cu if..else.
 ``` sql 
