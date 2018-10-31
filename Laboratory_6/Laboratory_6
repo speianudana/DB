@@ -8,4 +8,4 @@ SELECT Nume_Profesor,Prenume_Profesor,Adresa_Postala_Profesor
 FROM profesori
 ```
 ### Rezultat
-!
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex1.PNG)
