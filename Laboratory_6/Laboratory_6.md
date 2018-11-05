@@ -179,7 +179,7 @@ select * from profesori_new
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/5(4).PNG)
 
 ### 6. Să se insereze datele in tabelul orarul pentru Grupa= 'CIBJ 71' (Id_ Grupa= 1) pentru ziua de luni. Toate lectiile vor avea loc          în blocul de studii 'B'. Mai jos, sunt prezentate detaliile de inserare:
-#### *(ld_Disciplina = 107, Id_Profesor= 101, Ora ='08:00', Auditoriu = 202);
+#### (ld_Disciplina = 107, Id_Profesor= 101, Ora ='08:00', Auditoriu = 202);
 ####  (Id_Disciplina = 108, Id_Profesor= 101, Ora ='11:30', Auditoriu = 501);
 ####  (ld_Disciplina = 119, Id_Profesor= 117, Ora ='13:00', Auditoriu = 501); 
 ``` sql
@@ -207,4 +207,27 @@ SELECT *  FROM orarul
 ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex6.PNG)
 ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex6(1).PNG)
 
+### 7. Să se scrie expresiile T-SQL necesare pentru a popula tabelul orarul pentru grupa INF171 ,ziua de luni. 
+###   Datele necesare pentru inserare trebuie sa fie colectate cu ajutorul instructiunii/instructiunilor  SELECT și introduse in tabelul-destinație, știind că:
+#### lectie #1 (Ora ='08:00', Disciplina = 'Structuri de date si algoritmi', Profesor ='Bivol Ion')
+#### lectie #2 (Ora ='11 :30', Disciplina = 'Programe aplicative', Profesor ='Mircea Sorin')
+#### lectie #3 (Ora ='13:00', Disciplina ='Baze de date', Profesor = 'Micu Elena') 
+``` sql
+INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
+VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Structuri de date si algoritmi'),
+        (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Bivol' and Prenume_Profesor='Ion' ),
+		(SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','08:00',DEFAULT,DEFAULT)
+    
+INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
+VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Programe aplicative'),
+        (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Mircea' and Prenume_Profesor='Sorin' ),
+		(SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','11:30',DEFAULT,DEFAULT)
 
+INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
+VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
+        (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Micu' and Prenume_Profesor='Elena' ),
+		(SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','13:00',DEFAULT,DEFAULT)
+```
+### Rezultat:
+![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7.PNG)
+![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7(1).PNG)
