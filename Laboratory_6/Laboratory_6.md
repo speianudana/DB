@@ -24,9 +24,9 @@ FROM profesori
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex2.PNG)
 
 ### 3.La tabelul grupe, să se adauge 2 coloane noi Sef_grupa și Prof_Indrumator, ambele de tip INT. Să se populeze câmpurile nou-create cu cele mai potrivite candidaturi în baza criteriilor de mai jos: 
-  ### a) Șeful grupei trebuie să aibă cea mai bună reușită (medie) din grupă la toate formele de evaluare și la toate disciplinele. Un student nu poate fi șef de grupa la mai multe grupe.
-  ### b) Profesorul îndrumător trebuie să predea un număr maximal posibil de discipline la grupa data. Daca nu există o singură candidatură, care corespunde primei cerințe, atunci este ales din grupul de candidați acel cu identificatorul (Id_Profesor) minimal. Un profesor nu poate fi indrumător la mai multe grupe.
-  ### c) Să se scrie instructiunile ALTER, SELECT, UPDATE necesare pentru crearea coloanelor în tabelul grupe, pentru selectarea candidaților și înserarea datelor.
+  #### a) Șeful grupei trebuie să aibă cea mai bună reușită (medie) din grupă la toate formele de evaluare și la toate disciplinele. Un student nu poate fi șef de grupa la mai multe grupe.
+  #### b) Profesorul îndrumător trebuie să predea un număr maximal posibil de discipline la grupa data. Daca nu există o singură candidatură, care corespunde primei cerințe, atunci este ales din grupul de candidați acel cu identificatorul (Id_Profesor) minimal. Un profesor nu poate fi indrumător la mai multe grupe.
+  #### c) Să se scrie instructiunile ALTER, SELECT, UPDATE necesare pentru crearea coloanelor în tabelul grupe, pentru selectarea candidaților și înserarea datelor.
   ``` sql
 ALTER TABLE grupe
 ADD Sef_Grupa int,Prof_Indrumator int;
@@ -227,6 +227,7 @@ INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc)
 VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
         (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Micu' and Prenume_Profesor='Elena' ),
 		(SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','13:00',DEFAULT,DEFAULT)
+SELECT *  FROM orarul
 ```
 ### Rezultat:
 ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7.PNG)
