@@ -173,10 +173,10 @@ INSERT INTO profesori_new(Id_Profesor, Nume_Profesor, Prenume_Profesor, Localita
 select * from profesori_new
 ```
 ### Rezultat:
-![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(1).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/5(1).PNG)
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(2).PNG)
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(3).PNG)
-![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(4).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/5(4).PNG)
 
 
 
