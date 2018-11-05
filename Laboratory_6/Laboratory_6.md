@@ -89,8 +89,94 @@ SET @ID_SEF_3=(SELECT TOP 1 sef_grupa FROM grupe
 	       ORDER BY sef_grupa DESC)
 
 UPDATE studenti_reusita SET Nota=Nota+1 WHERE Id_Student IN(@ID_SEF_1, @ID_SEF_2, @ID_SEF_3) AND Nota!=10 
-```
 
+SELECT * FROM studenti_reusita
+```
+### Rezultat:
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4(1).PNG)
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4.PNG)
+
+
+### 5. Sa se creeze un tabel profesori_new, care include urmatoarele coloane: Id_Profesor,Nume _ Profesor, Prenume _ Profesor, Localitate, Adresa _ 1, Adresa _ 2.
+  #### a) Coloana Id_Profesor trebuie sa fie definita drept cheie primara și, în baza ei, sa fie construit un index CLUSTERED.
+  #### b) Cîmpul Localitate trebuie sa posede proprietatea DEFAULT= 'mun. Chisinau'.
+  #### c) Să se insereze toate datele din tabelul profesori în tabelul profesori_new. Să se scrie, cu acest scop, un număr potrivit de instrucțiuni T-SQL. Datele trebuie să fie transferate în felul următor: 
+  ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5.PNG)
+  #### În coloana Localitate să fie inserata doar informatia despre denumirea localității din coloana-sursă Adresa_Postala_Profesor. În coloana Adresa_l, doar denumirea străzii. În coloana Adresa_2, să se păstreze numărul casei și (posibil) a apartamentului. 
+``` sql
+CREATE TABLE profesori_new
+(Id_Profesor int NOT NULL
+ ,Nume_Profesor char(255)
+ ,Prenume_Profesor char(255)
+ ,Localitate char (255) DEFAULT('mun. Chisinau')
+ ,Adresa_1 char (60)
+ ,Adresa_2 char (60),
+  CONSTRAINT [PK_profesori_new] PRIMARY KEY CLUSTERED 
+(	Id_Profesor )) ON [PRIMARY]
+CREATE FUNCTION INSTR(@str VARCHAR(8000), @substr VARCHAR(255), @start INT, @occurrence INT)
+  RETURNS INT
+  AS
+  BEGIN
+	DECLARE @found INT = @occurrence,
+			@pos INT = @start;
+ 
+	WHILE 1=1 
+	BEGIN
+		-- Find the next occurrence
+		SET @pos = CHARINDEX(@substr, @str, @pos);
+ 
+		-- Nothing found
+		IF @pos IS NULL OR @pos = 0
+			RETURN @pos;
+ 
+		-- The required occurrence found
+		IF @found = 1
+			BREAK;
+ 
+		-- Prepare to find another one occurrence
+		SET @found = @found - 1;
+		SET @pos = @pos + 1;
+	END
+ 
+	RETURN @pos;
+  END
+  GO
+INSERT INTO profesori_new(Id_Profesor, Nume_Profesor, Prenume_Profesor, Localitate, Adresa_1, Adresa_2)
+ SELECT Id_Profesor,
+        Nume_Profesor,
+	Prenume_Profesor,
+	CASE 
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', ''))=3 
+		THEN  Substring(Adresa_Postala_Profesor,1, dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 2)-1)
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', '')) =2 
+		THEN Substring(Adresa_Postala_Profesor,1, charindex(',',Adresa_Postala_Profesor)-1)
+		ELSE Adresa_Postala_Profesor
+		END as  localitate,
+	CASE 
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', ''))=3 
+		THEN  Substring(Adresa_Postala_Profesor,dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 2)+1,
+		(dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 3))-(dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 2))-1)
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', '')) =2 
+		THEN Substring(Adresa_Postala_Profesor,dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 1)+1,
+		(dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 2))-(dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 1))-1)
+		ELSE NULL
+		END as  Adresa_1,
+	CASE 
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', ''))=3 
+		THEN  Substring(Adresa_Postala_Profesor,dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 3)+1, 5)
+		WHEN LEN(Adresa_Postala_Profesor)-LEN(REPLACE(Adresa_Postala_Profesor, ',', '')) =2 
+		THEN Substring(Adresa_Postala_Profesor,dbo.INSTR(Adresa_Postala_Profesor, ',', 1, 2)+1, 5)
+		ELSE NULL
+		END as  Adresa_2
+	FROM profesori;
+		
+select * from profesori_new
+```
+### Rezultat:
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(1).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(2).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(3).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex5(4).PNG)
 
 
 
