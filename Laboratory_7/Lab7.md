@@ -55,6 +55,29 @@ VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
 ### Rezultat:
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(1).PNG)
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(2).PNG)
+### 6. Creati, în baza de date universitatea, trei scheme noi: cadre_didactice, plan_studii și studenti. Transferați tabelul profesori din schema dbo in schema cadre didactice, ținînd cont de dependentele definite asupra tabelului menționat. În același mod să se trateze tabelele orarul,discipline care aparțin schemei plan_studii și tabelele studenți, studenti_reusita, care apartin schemei studenti. Se scrie instructiunile SQL respective. 
+``` sql
+use universitatea
+GO
+CREATE SCHEMA cadre_didactice;
+GO
+ALTER SCHEMA cadre_didactice TRANSFER dbo.profesori
+
+GO
+CREATE SCHEMA plan_studii;
+GO
+ALTER SCHEMA plan_studii TRANSFER dbo.orarul
+ALTER SCHEMA plan_studii TRANSFER dbo.discipline
+
+GO
+CREATE SCHEMA studenti;
+GO
+ALTER SCHEMA studenti TRANSFER dbo.studenti
+ALTER SCHEMA studenti TRANSFER dbo.studenti_reusita
+ ```
+ ### Rezultat:
+ ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex6.PNG)
+
 
 
 
