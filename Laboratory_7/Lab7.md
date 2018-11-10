@@ -77,6 +77,30 @@ ALTER SCHEMA studenti TRANSFER dbo.studenti_reusita
  ```
  ### Rezultat:
  ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex6.PNG)
+ ### 7.Modificati 2-3 interogari asupra bazei de date universitatea prezentate in capitolul 4 astfel ca numele tabelelor accesate sa fie descrise in mod explicit, ținînd cont de faptul ca tabelele au fost mutate in scheme noi.
+ #### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+ ``` sql
+ --38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+
+ALTER table studenti.studenti_reusita
+ALTER Column Nota decimal(4,2);
+
+SELECT  plan_studii.discipline.Disciplina,
+        AVG(Nota) as Nota_Medie
+FROM  plan_studii.discipline 
+INNER JOIN studenti.studenti_reusita 
+ON       plan_studii.discipline.Id_Disciplina=studenti.studenti_reusita.Id_Disciplina
+GROUP BY Disciplina
+HAVING AVG(studenti.studenti_reusita.Nota)>(SELECT AVG(studenti.studenti_reusita.Nota) AS Nota_Medie
+FROM plan_studii.discipline 
+INNER JOIN studenti.studenti_reusita 
+ON plan_studii.discipline.Id_Disciplina=studenti.studenti_reusita .Id_Disciplina
+where Disciplina='Baze de date')
+ ```
+ #### Rezultat:
+  ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(1).PNG)
+  ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(2).PNG)
+
 
 
 
