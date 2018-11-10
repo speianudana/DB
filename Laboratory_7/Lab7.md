@@ -189,8 +189,8 @@ ON discipline1.Id_Disciplina=sr.Id_Disciplina
 where Disciplina='Baze de date')
 ```
 #### Rezultat:
-  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(3).PNG)
   ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(4).PNG)
+  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(5).PNG)
 
 
 
