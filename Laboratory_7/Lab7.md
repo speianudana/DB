@@ -127,6 +127,74 @@ where Disciplina='Baze de date')
  #### Rezultat:
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(1).PNG)
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(2).PNG)
+  
+### 8.Creați sinonimele respective pentru a simplifica interogările construite în exercițiul precedent și reformulați interogările, folosind sinonimele create.
+#### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
+``` sql
+GO
+CREATE SYNONYM studenti1 FOR
+studenti.studenti
+
+GO
+CREATE SYNONYM profesori1 FOR
+cadre_didactice.profesori;
+
+SELECT Nume_Student as Nume,
+       Prenume_Student as Prenume ,
+	   Adresa_Postala_Student as Adresa
+       FROM studenti1
+      WHERE Adresa_Postala_Student LIKE '%31 August%'
+UNION
+
+SELECT Nume_Profesor ,
+       Prenume_Profesor ,
+	   Adresa_Postala_Profesor
+	   FROM profesori1
+	   WHERE Adresa_Postala_Profesor LIKE '%31 August%'
+```
+#### Rezultat:
+  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(1).PNG)
+#### 25.În ce grupe de studii figurează mai mult de 24 studenți?
+``` sql
+GO
+CREATE SYNONYM sr FOR
+studenti.studenti_reusita;
+
+SELECT Cod_Grupa FROM sr
+	INNER JOIN grupe g on g.Id_Grupa = sr.Id_Grupa
+GROUP BY Cod_Grupa
+HAVING count(DISTINCT sr.Id_Student) > 24
+```
+#### Rezultat:
+  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(2).PNG)
+#### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+``` sql
+GO
+CREATE SYNONYM discipline1 FOR
+plan_studii.discipline;
+
+ALTER table studenti.studenti_reusita
+ALTER Column Nota decimal(4,2);
+
+SELECT  Disciplina,
+        AVG(Nota) as Nota_Medie
+FROM  discipline1 
+INNER JOIN sr
+ON       discipline1.Id_Disciplina=sr.Id_Disciplina
+GROUP BY Disciplina
+HAVING AVG(sr.Nota)>(SELECT AVG(sr.Nota) AS Nota_Medie
+FROM discipline1 
+INNER JOIN sr
+ON discipline1.Id_Disciplina=sr.Id_Disciplina
+where Disciplina='Baze de date')
+```
+#### Rezultat:
+  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(3).PNG)
+  ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(4).PNG)
+
+
+
+
 
 
 
