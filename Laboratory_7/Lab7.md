@@ -1,16 +1,16 @@
 # Laboratory 7
 ## DIAGRAME, SCHEME ȘI SINONIME 
-### Sarcini practice
+### Sarcini practice:
 ### 1. Creați o diagramă a bazei de date, folosind forma de vizualizare standard, structura căreia este descrisă la începutul sarcinilor practice din capitolul 4. 
-### Rezultat
+### Rezultat:
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex1.PNG)
-### 2.Sa se adauge constrangeri referentiale (legate cu tabelele studenti și profesori) necesare coloanelor Sef_grupa și Prof_Indrumator (sarcina3, capitolul 6) din tabelul grupe. 
+### 2. Să se adauge constrîngeri referențiale (legate cu tabelele studenti și profesori) necesare coloanelor Sef_grupa și Prof_Indrumator (sarcina3, capitolul 6) din tabelul grupe. 
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(1).PNG)
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(2).PNG)
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(3).PNG)
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(4).PNG)
 
-### 3 La diagrama construită, să se adauge și tabelul orarul definit în capitolul 6 al acestei lucrari:tabelul orarul conține identificatorul disciplinei (ld_Disciplina), identificatorul profesorului(Id_Profesor) și blocul de studii (Bloc). Cheia tabelului este constituită din trei cîmpuri:identificatorul grupei (Id_ Grupa), ziua lectiei (Z1), ora de inceput a lectiei (Ora), sala unde are loc lectia (Auditoriu). 
+### 3. La diagrama construită, să se adauge și tabelul orarul definit în capitolul 6 al acestei lucrari:tabelul orarul conține identificatorul disciplinei (ld_Disciplina), identificatorul profesorului(Id_Profesor) și blocul de studii (Bloc). Cheia tabelului este constituită din trei cîmpuri:identificatorul grupei (Id_ Grupa), ziua lectiei (Z1), ora de inceput a lectiei (Ora), sala unde are loc lectia (Auditoriu). 
 ``` sql
 CREATE TABLE orarul( Id_Disciplina int NOT NULL,
                        Id_Profesor int NOT NULL, 
@@ -48,14 +48,14 @@ VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex3(1).PNG)
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex3(2).PNG)
 
-### 4.Tabelul orarul trebuie să conțină și 2 chei secundare: (Zi, Ora, Id_ Grupa, Id_ Profesor) și (Zi, Ora, ld_Grupa, ld_Disciplina). 
+### 4. Tabelul orarul trebuie să conțină și 2 chei secundare: (Zi, Ora, Id_ Grupa, Id_ Profesor) și (Zi, Ora, ld_Grupa, ld_Disciplina). 
 ### Rezultat:
 
-### 5.În diagrama, de asemenea, trebuie sa se defineasca constrangerile referentiale (FK-PK) ale atributelor ld_Disciplina, ld_Profesor, Id_ Grupa din tabelului orarul cu atributele tabelelor respective.
+### 5. În diagrama, de asemenea, trebuie sa se defineasca constrangerile referentiale (FK-PK) ale atributelor ld_Disciplina, ld_Profesor, Id_ Grupa din tabelului orarul cu atributele tabelelor respective.
 ### Rezultat:
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(1).PNG)
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(2).PNG)
-### 6. Creati, în baza de date universitatea, trei scheme noi: cadre_didactice, plan_studii și studenti. Transferați tabelul profesori din schema dbo in schema cadre didactice, ținînd cont de dependentele definite asupra tabelului menționat. În același mod să se trateze tabelele orarul,discipline care aparțin schemei plan_studii și tabelele studenți, studenti_reusita, care apartin schemei studenti. Se scrie instructiunile SQL respective. 
+### 6. Creați, în baza de date universitatea, trei scheme noi: cadre_didactice, plan_studii și studenti. Transferați tabelul profesori din schema dbo in schema cadre didactice, ținînd cont de dependentele definite asupra tabelului menționat. În același mod să se trateze tabelele orarul,discipline care aparțin schemei plan_studii și tabelele studenți, studenti_reusita, care apartin schemei studenti. Se scrie instructiunile SQL respective. 
 ``` sql
 use universitatea
 GO
@@ -77,8 +77,8 @@ ALTER SCHEMA studenti TRANSFER dbo.studenti_reusita
  ```
  ### Rezultat:
  ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex6.PNG)
- ### 7.Modificati 2-3 interogari asupra bazei de date universitatea prezentate in capitolul 4 astfel ca numele tabelelor accesate sa fie descrise in mod explicit, ținînd cont de faptul ca tabelele au fost mutate in scheme noi.
- #### 25.În ce grupe de studii figurează mai mult de 24 studenți?
+ ### 7. Modificati 2-3 interogari asupra bazei de date universitatea prezentate in capitolul 4 astfel ca numele tabelelor accesate sa fie descrise in mod explicit, ținînd cont de faptul ca tabelele au fost mutate in scheme noi.
+ #### 25. În ce grupe de studii figurează mai mult de 24 studenți?
  ``` sql
 SELECT grupe.Cod_Grupa FROM studenti.studenti_reusita
 	INNER JOIN grupe  on grupe.Id_Grupa = studenti.studenti_reusita.Id_Grupa
@@ -88,7 +88,7 @@ HAVING count(DISTINCT studenti.studenti_reusita.Id_Student) > 24
 #### Rezultat:
  ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(5).PNG)
 
- #### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
+ #### 26. Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
  ``` sql
 SELECT studenti.studenti.Nume_Student as Nume,
        studenti.studenti.Prenume_Student as Prenume ,
@@ -107,7 +107,7 @@ SELECT cadre_didactice.profesori.Nume_Profesor ,
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(3).PNG)
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(4).PNG)
 
- #### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+ #### 38. Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
  ``` sql
 ALTER table studenti.studenti_reusita
 ALTER Column Nota decimal(4,2);
@@ -128,7 +128,7 @@ where Disciplina='Baze de date')
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(1).PNG)
   ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(2).PNG)
   
-### 8.Creați sinonimele respective pentru a simplifica interogările construite în exercițiul precedent și reformulați interogările, folosind sinonimele create.
+### 8. Creați sinonimele respective pentru a simplifica interogările construite în exercițiul precedent și reformulați interogările, folosind sinonimele create.
 #### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
 ``` sql
 GO
@@ -154,7 +154,7 @@ SELECT Nume_Profesor ,
 ```
 #### Rezultat:
   ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(1).PNG)
-#### 25.În ce grupe de studii figurează mai mult de 24 studenți?
+#### 25. În ce grupe de studii figurează mai mult de 24 studenți?
 ``` sql
 GO
 CREATE SYNONYM sr FOR
@@ -167,7 +167,7 @@ HAVING count(DISTINCT sr.Id_Student) > 24
 ```
 #### Rezultat:
   ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex8(2).PNG)
-#### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+#### 38. Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
 ``` sql
 GO
 CREATE SYNONYM discipline1 FOR
