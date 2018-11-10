@@ -10,3 +10,6 @@
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(3).PNG)
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex2(4).PNG)
 
+### 3 La diagrama construită, să se adauge și tabelul orarul definit în capitolul 6 al acestei lucrari:tabelul orarul conține identificatorul disciplinei (ld_Disciplina), identificatorul profesorului(Id_Profesor) și blocul de studii (Bloc). Cheia tabelului este constituită din trei cîmpuri:identificatorul grupei (Id_ Grupa), ziua lectiei (Z1), ora de inceput a lectiei (Ora), sala unde are loc lectia (Auditoriu). 
+
+
