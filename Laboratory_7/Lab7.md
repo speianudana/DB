@@ -78,6 +78,16 @@ ALTER SCHEMA studenti TRANSFER dbo.studenti_reusita
  ### Rezultat:
  ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex6.PNG)
  ### 7.Modificati 2-3 interogari asupra bazei de date universitatea prezentate in capitolul 4 astfel ca numele tabelelor accesate sa fie descrise in mod explicit, ținînd cont de faptul ca tabelele au fost mutate in scheme noi.
+ #### 25.În ce grupe de studii figurează mai mult de 24 studenți?
+ ``` sql
+SELECT grupe.Cod_Grupa FROM studenti.studenti_reusita
+	INNER JOIN grupe  on grupe.Id_Grupa = studenti.studenti_reusita.Id_Grupa
+GROUP BY Cod_Grupa
+HAVING count(DISTINCT studenti.studenti_reusita.Id_Student) > 24
+```
+#### Rezultat:
+ ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(5).PNG)
+
  #### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
  ``` sql
 SELECT studenti.studenti.Nume_Student as Nume,
