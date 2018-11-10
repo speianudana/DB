@@ -33,19 +33,28 @@ INSERT orarul VALUES(109, 117, (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='CIB1
 INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
 VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Structuri de date si algoritmi'),
         (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Bivol' and Prenume_Profesor='Ion' ),
-		    (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','08:00',115,DEFAULT)
+        (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','08:00',115,DEFAULT)
     
 INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
 VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Programe aplicative'),
         (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Mircea' and Prenume_Profesor='Sorin' ),
-		    (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','11:30',113,DEFAULT)
+        (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','11:30',113,DEFAULT)
 
 INSERT INTO orarul (Id_Disciplina,Id_Profesor,Id_Grupa,Zi,Ora,Auditoriu,Bloc) 
 VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
         (SELECT Id_Profesor FROM profesori WHERE Nume_Profesor='Micu' and Prenume_Profesor='Elena' ),
-		    (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','13:00',118,DEFAULT)
+        (SELECT Id_Grupa FROM grupe WHERE Cod_Grupa='INF171'),'Lu','13:00',118,DEFAULT)
 ```
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex3(1).PNG)
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex3(2).PNG)
+
+### 4.Tabelul orarul trebuie să conțină și 2 chei secundare: (Zi, Ora, Id_ Grupa, Id_ Profesor) și (Zi, Ora, ld_Grupa, ld_Disciplina). 
+### Rezultat:
+
+### 5.În diagrama, de asemenea, trebuie sa se defineasca constrangerile referentiale (FK-PK) ale atributelor ld_Disciplina, ld_Profesor, Id_ Grupa din tabelului orarul cu atributele tabelelor respective.
+### Rezultat:
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(1).PNG)
+![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex5(2).PNG)
+
 
 
