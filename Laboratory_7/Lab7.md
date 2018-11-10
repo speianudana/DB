@@ -78,10 +78,27 @@ ALTER SCHEMA studenti TRANSFER dbo.studenti_reusita
  ### Rezultat:
  ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex6.PNG)
  ### 7.Modificati 2-3 interogari asupra bazei de date universitatea prezentate in capitolul 4 astfel ca numele tabelelor accesate sa fie descrise in mod explicit, ținînd cont de faptul ca tabelele au fost mutate in scheme noi.
+ #### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
+ ``` sql
+SELECT studenti.studenti.Nume_Student as Nume,
+       studenti.studenti.Prenume_Student as Prenume ,
+	   studenti.studenti.Adresa_Postala_Student as Adresa
+       FROM studenti.studenti
+      WHERE studenti.studenti.Adresa_Postala_Student LIKE '%31 August%'
+UNION
+
+SELECT cadre_didactice.profesori.Nume_Profesor ,
+       cadre_didactice.profesori.Prenume_Profesor ,
+	   cadre_didactice.profesori.Adresa_Postala_Profesor
+	   FROM cadre_didactice.profesori
+	   WHERE cadre_didactice.profesori.Adresa_Postala_Profesor LIKE '%31 August%'
+```
+#### Rezultat:
+  ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(3).PNG)
+  ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex7(4).PNG)
+
  #### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
  ``` sql
- --38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
-
 ALTER table studenti.studenti_reusita
 ALTER Column Nota decimal(4,2);
 
