@@ -49,6 +49,10 @@ VALUES ((SELECT Id_Disciplina FROM discipline WHERE Disciplina='Baze de date'),
 ![Ex3](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex3(2).PNG)
 
 ### 4. Tabelul orarul trebuie să conțină și 2 chei secundare: (Zi, Ora, Id_ Grupa, Id_ Profesor) și (Zi, Ora, ld_Grupa, ld_Disciplina). 
+  ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex4(1).PNG)
+  ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex4(2).PNG)
+  ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_7/Screenshots_Lab7/ex4(3).PNG)
+
 ### Rezultat:
 
 ### 5. În diagrama, de asemenea, trebuie sa se defineasca constrangerile referentiale (FK-PK) ale atributelor ld_Disciplina, ld_Profesor, Id_ Grupa din tabelului orarul cu atributele tabelelor respective.
