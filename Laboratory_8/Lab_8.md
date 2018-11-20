@@ -54,9 +54,7 @@ SELECT * FROM exercitiul38
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex1(4).PNG)
 
 --------------------------------------------------------------------------------------------------------------------------------------
-#### 2. Să se scrie cate un exemplu de instrucțiuni INSERT, UPDATE, DELETE asupra viziunilor
-create. Să se adauge comentariile respective referitoare la rezultatele executarii acestor
-instructiuni. 
+#### 2. Să se scrie cate un exemplu de instrucțiuni INSERT, UPDATE, DELETE asupra viziunilor create. Să se adauge comentariile respective referitoare la rezultatele executarii acestor instructiuni. 
 Using UPDATE:
 ``` sql
 UPDATE exercitiul38
@@ -112,9 +110,7 @@ WHERE Disciplina ='Baze de date'
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex2(4).PNG)
 -------------------------------------------------------------------------------------------------------------------------------------
 
-3.Să se scrie instructiunile SQL care ar modifica viziunile create (in exercitiul 1) in așa fel, incat
-sa nu fie posibila modificarea sau ștergerea tabelelor pe care acestea sunt definite și viziunile
-sa nu accepte operatiuni DML, daca conditiile clauzei WHERE nu sunt satisfăcute. 
+3.Să se scrie instructiunile SQL care ar modifica viziunile create (in exercitiul 1) in așa fel, incat sa nu fie posibila modificarea sau ștergerea tabelelor pe care acestea sunt definite și viziunile sa nu accepte operatiuni DML, daca conditiile clauzei WHERE nu sunt satisfăcute. 
 Pentru viziunea exercitiul38:
 ``` sql
 
@@ -167,8 +163,7 @@ UPDATE exemplul17 SET Prenume_Profesor='Dana' WHERE Prenume_Profesor='Diana'
 ```
 ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex4.PNG)
 ---------------------------------------------------------------------------------------------------------------------------------------
-### 5.Sa se rescrie 2 interogări formulate în exercițiile din capitolul 4, in așa fel, încat interogarile
-imbricate sa fie redate sub forma expresiilor CTE. 
+### 5.Sa se rescrie 2 interogări formulate în exercițiile din capitolul 4, in așa fel, încat interogarile imbricate sa fie redate sub forma expresiilor CTE. 
 
 #### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
 ``` sql
@@ -209,11 +204,7 @@ Where Id_Disciplina NOT IN (SELECT * FROM Ore60)
 ### Result:
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex5(2).PNG)
 -----------------------------------------------------------------------------------------------------------------------------------
-6.Se considera un graf orientat, precum cel din figura de mai jos și fie se dorește parcursă calea
-de la nodul id = 3 la nodul unde id = 0. Să se facă reprezentarea grafului orientat in forma de
-expresie-tabel recursiv.
-Să se observe instrucțiunea de dupa UNION ALL a membrului recursiv, precum și partea de
-pana la UNION ALL reprezentata de membrul-ancora. 
+### 6.Se considera un graf orientat, precum cel din figura de mai jos și fie se dorește parcursă calea de la nodul id = 3 la nodul unde id = 0. Să se facă reprezentarea grafului orientat in forma de expresie-tabel recursiv. Să se observe instrucțiunea de dupa UNION ALL a membrului recursiv, precum și partea de pana la UNION ALL reprezentata de membrul-ancora. 
 ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex6(1).PNG)
 
 
