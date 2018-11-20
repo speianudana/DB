@@ -266,15 +266,15 @@ ON r.Id_Disciplina=d.Id_Disciplina
 WHERE Disciplina='Baze de date' AND Tip_Evaluare='Testul 2' 
 ORDER BY Nota DESC
 ```
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(1).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(2).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(3).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(4).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(5).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(6).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(7).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(8).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(9).PNG)
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(10).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(1).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(2).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(3).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(4).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(5).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(6).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(7).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(8).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(9).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(10).PNG)
 
 
