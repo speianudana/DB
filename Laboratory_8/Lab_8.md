@@ -204,6 +204,31 @@ Where Id_Disciplina NOT IN (SELECT * FROM Ore60)
 -----------------------------------------------------------------------------------------------------------------------------------
 ### 6.Se considera un graf orientat, precum cel din figura de mai jos și fie se dorește parcursă calea de la nodul id = 3 la nodul unde id = 0. Să se facă reprezentarea grafului orientat in forma de expresie-tabel recursiv. Să se observe instrucțiunea de dupa UNION ALL a membrului recursiv, precum și partea de pana la UNION ALL reprezentata de membrul-ancora. 
 ![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex6(1).PNG)
+``` sql
+CREATE TABLE graph (
+		ID int PRIMARY KEY,
+		ParinteID int
+		);
+
+INSERT INTO graph VALUES
+(5,0),
+(1,0),
+(3,2),
+(2,1),
+(4,2);
+
+
+;WITH graph1 AS
+ (SELECT ID , ParinteID from graph
+  where ID = 3 and ParinteID = 2
+UNION ALL
+  SELECT graph.ID, graph.ParinteID from graph
+  INNER JOIN graph1
+  ON graph.ID = graph1.ParinteID)
+SELECT * from graph1
+```
+![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex6.PNG)
+
 
 
 
