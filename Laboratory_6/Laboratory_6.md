@@ -232,3 +232,49 @@ SELECT *  FROM orarul
 ### Rezultat:
 ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7.PNG)
 ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7(1).PNG)
+
+
+### 8.
+Crearea filegrupului:
+``` sql
+ALTER DATABASE universitatea
+ADD FILEGROUP userdatafgroupl
+GO
+
+ALTER DATABASE universitatea
+ADD FILE
+( NAME = Indexes,
+FILENAME = 'C:\SQL\MyDocuments\Data\db.ndf',
+SIZE = 8MB
+)
+TO FILEGROUP userdatafgroupl
+GO
+```
+
+#### 6.Afișați numele și prenumele primilor 5 studenți, care au obținut note în ordine descrescătoare la al doilea test de la disciplina Baze de date.
+
+Rezultate înainte de indexare:
+
+``` sql
+
+SELECT TOP(5) WITH TIES Nume_Student,Prenume_Student, Nota
+FROM studenti s
+INNER JOIN studenti_reusita r
+ON s.Id_Student=r.Id_Student
+INNER JOIN discipline d 
+ON r.Id_Disciplina=d.Id_Disciplina
+WHERE Disciplina='Baze de date' AND Tip_Evaluare='Testul 2' 
+ORDER BY Nota DESC
+```
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(1).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(2).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(3).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(4).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(5).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(6).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(7).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(8).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(9).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex8(10).PNG)
+
+
