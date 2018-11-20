@@ -185,7 +185,7 @@ HAVING AVG(Nota)>(Select Medie_Disciplina from avgnotaDisciplina);
 ```
 ### Result:
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex5(1).PNG)
---18. Afișați numele și prenumele profesorilor,care au predat doar discipline cu o încărcare orară mai mică de 60 de ore.
+#### 18. Afișați numele și prenumele profesorilor,care au predat doar discipline cu o încărcare orară mai mică de 60 de ore.
 ``` sql
 ;with Ore60
 AS
