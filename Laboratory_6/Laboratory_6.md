@@ -274,6 +274,10 @@ ORDER BY Nota DESC
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(6).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(7).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(8).PNG)
+``` sql
+Create nonclustered index ix_studenti_reusita_2 on studenti_reusita (Id_Disciplina) include (Nota)
+on userdatafgroupl
+```
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(9).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(10).PNG)
 
