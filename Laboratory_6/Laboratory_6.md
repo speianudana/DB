@@ -268,12 +268,30 @@ ORDER BY Nota DESC
 ```
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(1).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(2).PNG)
+Rezultatele după indexare:
+``` sql
+set statistics io on
+set statistics time on
+
+Create Unique nonclustered Index ix_student_reusita on studenti_reusita(Id_Student,Id_Disciplina, Tip_Evaluare, Nota DESC)
+where Tip_Evaluare = 'Testul 2' 
+on userdatafgroupl
+```
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(3).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(4).PNG)
+#### 38.Furnizați denumirile disciplinelor cu o medie mai mică decît media notelor de la disciplina Baze de date.
+Rezultatele înainte de indexare:
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(5).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(6).PNG)
+Rezultatele după indexare pe tabelul discipline:
+``` sql
+Create Unique nonclustered Index ix_discipline on discipline(Id_Disciplina, Disciplina)
+where Disciplina = 'Baze de date' 
+on userdatafgroupl
+```
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(7).PNG)
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/8(8).PNG)
+Rezultatele după indexare pe tabelul studenti_reusita(Id_Disciplina):
 ``` sql
 Create nonclustered index ix_studenti_reusita_2 on studenti_reusita (Id_Disciplina) include (Nota)
 on userdatafgroupl
