@@ -185,10 +185,8 @@ HAVING AVG(Nota)>(Select Medie_Disciplina from avgnotaDisciplina);
 ```
 ### Result:
 ![Ex5](https://github.com/speianudana/DB/blob/master/Laboratory_8/Screenshots_Lab8/ex5(1).PNG)
-
-#### 26.Găsiți numele,prenumele și adresele studenților și ale profesorilor care locuiesc pe strada 31 August.
-``` sql
 --18. Afișați numele și prenumele profesorilor,care au predat doar discipline cu o încărcare orară mai mică de 60 de ore.
+``` sql
 ;with Ore60
 AS
 (SELECT Id_Disciplina
