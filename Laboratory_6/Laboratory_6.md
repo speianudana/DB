@@ -234,7 +234,7 @@ SELECT *  FROM orarul
 ![Ex7](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex7(1).PNG)
 
 
-### 8.
+### 8.Sa se scrie interogarile de creare a indecșilor asupra tabelelor din baza de date universitatea pentru a asigura o performanta sporita la executarea interogarilor SELECT din Lucrarea practica 4. Rezultatele optimizarii sa fie analizate in baza planurilor de executie, pana la și dupa crearea indecșilor.Indecșii nou-creati sa fie plasati fizic in grupul de fișiere userdatafgroupl (Crearea și întreșinerea bazei de date - sectiunea 2.2.2) 
 Crearea filegrupului:
 ``` sql
 ALTER DATABASE universitatea
