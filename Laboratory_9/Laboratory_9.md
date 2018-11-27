@@ -289,6 +289,75 @@ SELECT * From dbo.studentReusita('Cosovanu Geanina')
 ![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex8(2).PNG)
 
 #### 9.Se cere realizarea unei functii definite de utilizator, care ar gasi cel mai sarguincios sau cel mai slab student dintr-o grupa. Se defineste urmatorul format al functiei: numeFunctie(Cod_ Grupa, is_good). Parametrul <is_good> poate accepta valorile "sarguincios" sau "slab", respectiv. Functia sa returneze un tabel cu urmatoarele campuri Grupa,Nume_Prenume_Student, Nota Medie , is_good. Nota Medie sa fie cu precizie de 2 zecimale.
+``` sql
+DROP FUNCTION IF EXISTS studentReusita1
+GO
+CREATE FUNCTION studentReusita1(@Cod_Grupa varchar(6),@is_good varchar(20))
+RETURNS @result TABLE 
+   (Nume_Prenume_Student varchar(50),Nota_Medie  decimal(4,2),is_good varchar(20))
+ -- WITH ENCRYPTION
+   AS
+ BEGIN
+   if @is_good='sirguincios'
+   
+   INSERT INTO @result
+ Select concat(Nume_Student,' ',Prenume_Student) as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
+  from studenti s
+  inner join studenti_reusita r
+  on s.Id_Student=r.Id_Student
+  where Nume_Student=(select top 1 Nume_Student
+                      from studenti s
+                      inner join studenti_reusita r
+                      on s.Id_Student=r.Id_Student
+                      where Id_Grupa =(Select Id_Grupa from grupe where Cod_Grupa=@Cod_Grupa )
+                      Group by Nume_Student,Prenume_Student
+                      Order by AVG(Nota) DESC) 
+  and Prenume_Student=(select top 1 Prenume_Student
+                      from studenti s
+                      inner join studenti_reusita r
+                      on s.Id_Student=r.Id_Student
+                      where Id_Grupa =(Select Id_Grupa from grupe where Cod_Grupa=@Cod_Grupa )
+                      Group by Nume_Student,Prenume_Student
+                      Order by AVG(Nota) DESC)
+Group by Nume_Student,Prenume_Student
+
+else if @is_good='slab'
+insert into @result 
+Select concat(Nume_Student,' ',Prenume_Student)as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
+  from studenti s
+  inner join studenti_reusita r
+  on s.Id_Student=r.Id_Student
+  where Nume_Student=(select top 1 Nume_Student
+                      from studenti s
+                      inner join studenti_reusita r
+                      on s.Id_Student=r.Id_Student
+                      where Id_Grupa =(Select Id_Grupa from grupe where Cod_Grupa=@Cod_Grupa )
+                      Group by Nume_Student,Prenume_Student
+                      Order by AVG(Nota) ASC) 
+  and Prenume_Student=(select top 1 Prenume_Student
+                      from studenti s
+                      inner join studenti_reusita r
+                      on s.Id_Student=r.Id_Student
+                      where Id_Grupa =(Select Id_Grupa from grupe where Cod_Grupa=@Cod_Grupa )
+                      Group by Nume_Student,Prenume_Student
+                      Order by AVG(Nota) ASC)
+Group by Nume_Student,Prenume_Student
+return;
+end
+```
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(1).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(2).PNG)
+
+#### Rezultate:
+``` sql
+select * from dbo.studentReusita1('INF171','sirguincios')
+
+```
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(3).PNG)
+``` sql
+select * from dbo.studentReusita1('INF171','slab')
+```
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(4).PNG)
 
 
 
