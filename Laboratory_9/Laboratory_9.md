@@ -294,14 +294,13 @@ DROP FUNCTION IF EXISTS studentReusita1
 GO
 CREATE FUNCTION studentReusita1(@Cod_Grupa varchar(6),@is_good varchar(20))
 RETURNS @result TABLE 
-   (Nume_Prenume_Student varchar(50),Nota_Medie  decimal(4,2),is_good varchar(20))
- -- WITH ENCRYPTION
+   (Cod_Grupa varchar(6),Nume_Prenume_Student varchar(50),Nota_Medie  decimal(4,2),is_good varchar(20))
    AS
  BEGIN
    if @is_good='sirguincios'
    
    INSERT INTO @result
- Select concat(Nume_Student,' ',Prenume_Student) as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
+ Select @Cod_Grupa,concat(Nume_Student,' ',Prenume_Student) as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
   from studenti s
   inner join studenti_reusita r
   on s.Id_Student=r.Id_Student
@@ -323,7 +322,7 @@ Group by Nume_Student,Prenume_Student
 
 else if @is_good='slab'
 insert into @result 
-Select concat(Nume_Student,' ',Prenume_Student)as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
+Select @Cod_Grupa,concat(Nume_Student,' ',Prenume_Student)as Nume_Prenume_Student,cast(avg(Nota)as decimal(4,2)) as Nota_Medie ,@is_good
   from studenti s
   inner join studenti_reusita r
   on s.Id_Student=r.Id_Student
