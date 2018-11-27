@@ -352,11 +352,11 @@ end
 select * from dbo.studentReusita1('INF171','sirguincios')
 
 ```
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(3).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(4).PNG)
 ``` sql
 select * from dbo.studentReusita1('INF171','slab')
 ```
-![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(4).PNG)
+![Ex8](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex9(3).PNG)
 
 
 
