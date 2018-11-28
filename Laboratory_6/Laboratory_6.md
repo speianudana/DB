@@ -13,12 +13,13 @@ FROM profesori
 ### 2. Sa se modifice schema tabelului grupe, ca sa corespunda urmatoarelor cerinte:
 ``` sql
 --   a) Campul Cod_ Grupa sa accepte numai valorile unice și să nu accepte valori necunoscute.
+--   b) Să se țină cont că cheie primară, deja, este definită asupra coloanei Id_ Grupa.       
+
         ALTER TABLE grupe 
         ADD UNIQUE (Cod_Grupa);
-
---   b) Să se țină cont că cheie primară, deja, este definită asupra coloanei Id_ Grupa.       
-      ALTER TABLE grupe
-      ALTER COLUMN Cod_Grupa char(6) NOT NULL;
+	
+        ALTER TABLE grupe
+        ALTER COLUMN Cod_Grupa char(6) NOT NULL;
 ```
 ### Rezultat
 ![Ex2](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex2.PNG)
