@@ -83,8 +83,8 @@ from grupe
 SELECT * FROM studenti_reusita
 ```
 ### Rezultat:
-![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4(1).PNG)
-![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4.PNG)
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4(3).PNG)
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_6/Screenshots_Lab6/ex4(2).PNG)
 
 
 ### 5. Sa se creeze un tabel profesori_new, care include urmatoarele coloane: Id_Profesor,Nume _ Profesor, Prenume _ Profesor, Localitate, Adresa _ 1, Adresa _ 2.
