@@ -29,7 +29,7 @@ ALTER TRIGGER inregistrare_noua ON orarul
  on deleted.Id_Disciplina=d.Id_Disciplina
  GO
 ```
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab9/ex1(1).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex1(1).PNG)
 
 #### Verificare și rezultate:
 ``` sql
