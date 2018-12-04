@@ -66,8 +66,7 @@ CREATE TRIGGER Ex2 on dbo.studenti_reusita
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex2(1).PNG)
 #### Rezultate:
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex2(2).PNG)
-#### 3.Sa se creeze un declanșator, care ar interzice micșorarea notelor în tabelul studenti_reusita și
-modificarea valorilor campului Data_Evaluare, unde valorile acestui camp sunt nenule.Declanșatorul trebuie sa se lanseze, numai daca sunt afectate datele studentilor din grupa"CIB171". Se va afișa un mesaj de avertizare in cazul tentativei de a încălca constrangerea. 
+#### 3.Sa se creeze un declanșator, care ar interzice micșorarea notelor în tabelul studenti_reusita și modificarea valorilor campului Data_Evaluare, unde valorile acestui camp sunt nenule.Declanșatorul trebuie sa se lanseze, numai daca sunt afectate datele studentilor din grupa"CIB171". Se va afișa un mesaj de avertizare in cazul tentativei de a încălca constrangerea. 
 #### TRIGGER:
 ``` sql
 USE universitatea;
