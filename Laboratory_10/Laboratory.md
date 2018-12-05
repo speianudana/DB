@@ -183,35 +183,37 @@ add pisica varchar(10)
 
 #### 6.Să se creeze un declanșator DDL care, la modificarea proprietatilor coloanei Id_Profesor dintr-un tabel, ar face schimbari asemănătoare în mod automat în restul tabelelor. 
 ``` sql
-USE universitatea; 
- GO 
-   DROP TRIGGER IF EXISTS ex6 ON DATABASE;  
-   GO 
- CREATE TRIGGER ex6 ON DATABASE 
-  FOR ALTER_TABLE
-    AS 
- SET NOCOUNT ON 
- DECLARE @D varchar(10)  
+CREATE TRIGGER ex6 ON DATABASE
+FOR ALTER_TABLE
+AS
+SET NOCOUNT ON
+ DECLARE @D varchar(30)  
  DECLARE @event1 varchar(500)  
  DECLARE @event2 varchar(500)  
  DECLARE @event3 varchar(50) 
  SELECT @D=EVENTDATA(). value('(/EVENT_INSTANCE/AlterTableActionList/*/Columns/Name)[1]','nvarchar(max)')
- IF @D = 'Id_Profesor'    
+ IF @D = 'Prenume_Profesor'    
  BEGIN  
  SELECT @event1 = EVENTDATA().value('(/EVENT_INSTANCE/TSQLCommand/CommandText)[1]','nvarchar(max)') 
  SELECT @event3 = EVENTDATA().value('(/EVENT_INSTANCE/ObjectName)[1]','nvarchar(max)') 
- SELECT @event2 = REPLACE(@event1, @event3, 'profesori');
- EXECUTE (@event2) 
- SELECT @event2 = REPLACE(@event1, @event3, 'orarul');
- EXECUTE (@event2) 
- SELECT @event2 = REPLACE(@event1, @event3, 'studenti_reusita');
- EXECUTE (@event2)   
- PRINT 'Datele au fost modificate'   
-  END 
-
-alter TABLE profesori alter column Id_Profesor smallint 
-
+ SELECT @event2 = REPLACE(@event1, @event3, 'profesori'); EXECUTE (@event2) 
+ SELECT @event2 = REPLACE(@event1, @event3, 'profesori_new');EXECUTE (@event2) 
+PRINT 'Datele au fost modificate in toate tabelele'
+END
+go
 ```
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(1).PNG)
+
+``` sql
+alter table profesori alter column Prenume_profesor varchar(70)
+```
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(2).PNG)
+Înainte:
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(3).PNG)
+După:
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(4).PNG)
+
+
 
 
 
