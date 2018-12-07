@@ -132,7 +132,7 @@ END
 GO
 ```
 ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex4(1).PNG)
-####Verificare și rezultate:
+#### Verificare și rezultate:
 ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex4(2).PNG)
 
 #### 5.Sa se creeze un declanșator DDL care ar interzice modificarea schemei bazei de date în afara orelor de lucru. 
