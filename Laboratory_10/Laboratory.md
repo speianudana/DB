@@ -115,25 +115,25 @@ where Id_Disciplina=107
 
 #### 4. Sa se creeze un declanșator DDL care ar interzice modificarea coloanei Id_Disciplina în tabelele bazei de date universitatea cu afișarea mesajului respectiv. 
 ``` sql
-USE universitatea;
-GO 
-DROP TRIGGER IF EXISTS Ex4 ON DATABASE;
+DROP TRIGGER IF EXISTS ex4 ON DATABASE;  
 GO
-CREATE TRIGGER Ex4  ON DATABASE 
- FOR ALTER_TABLE 
- AS  
-SET NOCOUNT ON 
-DECLARE @Id_Disciplina int 
-SELECT @Id_Disciplina=EVENTDATA().value('(/EVENT_INSTANCE/TSQLCommand/CommandText)[1]', 'nvarchar(max)') 
-IF @Id_Disciplina='Id_Disciplina'
+CREATE TRIGGER ex4
+on database
+for ALTER_TABLE
+AS
+SET NOCOUNT ON
+DECLARE @Disciplina varchar(50)
+SET @Disciplina =EVENTDATA(). value('(/EVENT_INSTANCE/AlterTableActionList/*/Columns/Name)[1]','nvarchar(max)')
+IF @Disciplina='Disciplina'
 BEGIN
-PRINT('Coloana Id_Disciplina nu poate fi modificata');
+PRINT ('Coloana Disciplina nu poate fi modificată');
 ROLLBACK;
 END
-
-ALTER TABLE studenti_reusita ALTER COLUMN Id_Disciplina char(1);
 GO
 ```
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex4(1).PNG)
+####Verificare și rezultate:
+![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex4(2).PNG)
 
 #### 5.Sa se creeze un declanșator DDL care ar interzice modificarea schemei bazei de date în afara orelor de lucru. 
 #### TRIGGER:
