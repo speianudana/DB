@@ -205,13 +205,13 @@ go
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(1).PNG)
 
 ``` sql
-alter table profesori alter column Prenume_profesor varchar(70)
+alter table profesori alter column Prenume_profesor varchar(60)
 ```
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(2).PNG)
 Înainte:
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(3).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex66.PNG)
 După:
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex6(4).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex67.PNG)
 
 
 
