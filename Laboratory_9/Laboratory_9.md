@@ -1,5 +1,5 @@
 # Laboratory 9
-## Proceduri stocate și funții definite de utilizator
+## Proceduri stocate și funcții definite de utilizator
 ### Sarcini parctice:
 #### 1. Sa se creeze proceduri stocate in baza exercitiilor (2 exercitii) din capitolul 4. Parametrii de intrare trebuie sa corespunda criteriilor din clauzele WHERE ale exercitiilor respective . 
  6.Afișați numele și prenumele primilor 5 studenți, care au obținut note în ordine descrescătoare la al doilea test de la disciplina Baze de date.
@@ -183,6 +183,44 @@ select * from profesori
 ```
 ![Ex4](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex4(3).PNG)
 #### 5.Sa se creeze o procedura stocata care ar forma o lista cu primii 3 cei mai buni studenti la o disciplina, si acestor studenti sa le fie marita nota la examenul final cu un punct (nota maximala posibila este 10). in calitate de parametru de intrare, va servi denumirea disciplinei.Procedura sa returneze urmatoarele campuri: Cod_ Grupa, Nume_Prenume_Student,Disciplina, Nota _ Veche, Nota _ Noua. 
+``` sql
+CREATE PROCEDURE ex5
+AS
+SELECT * FROM ex5_1('Sisteme de calcul')
+EXEC ex5;
+
+DROP PROCEDURE dbo.ex5_lab9
+SELECT * FROM studenti_reusita 
+GO
+DROP FUNCTION if exists ex5_1
+GO 
+CREATE FUNCTION ex5_1(@disciplina varchar (100))
+RETURNS TABLE
+AS
+RETURN
+(select distinct top(3) Cod_Grupa
+		,concat(Nume_Student,' ',Prenume_Student) as Nume_Prenume
+		,Disciplina
+		,Nota as Nota_Veche
+		,case when Nota=10 then Nota else Nota+1  end as Nota_Noua
+FROM studenti_reusita r
+JOIN grupe g ON r.Id_Grupa = g.Id_Grupa
+JOIN studenti s ON r.Id_Student = s.Id_Student
+JOIN discipline d ON r.Id_Disciplina = d.Id_Disciplina
+WHERE Disciplina= @disciplina
+AND Tip_Evaluare = 'Examen'
+ORDER BY Nota DESC)
+```
+![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex5(1).PNG)
+![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex5(2).PNG)
+
+#### Rezultate:
+``` sql
+SELECT * FROM ex5_1('Sisteme de calcul')
+```
+![Ex6](https://github.com/speianudana/DB/blob/master/Laboratory_9/Screenshots_lab9/ex5(3).PNG)
+
+
 
 
 
