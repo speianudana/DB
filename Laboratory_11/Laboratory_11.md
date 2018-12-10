@@ -27,7 +27,7 @@ BACKUP LOG universitatea TO DISK = 'C:\Program Files\Microsoft SQL Server\MSSQL1
 ```
 ![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_11/Screenshots_lab11/ex2(1).PNG)
 #### Rezultate:
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex2(2).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_11/Screenshots_lab11/ex2(2).PNG)
 
 
 #### 3.Să se scrie instructiunea unui backup al jurnalului de tranzactii al bazei de date universitatea. Fisierul copiei de rezerva sa se numeasca exercitiul3.bak.
