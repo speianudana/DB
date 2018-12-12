@@ -153,8 +153,8 @@ DECLARE @A FLOAT
 DECLARE @B FLOAT
 SELECT @Time_Now=GETDATE()
 
-SELECT @Start_Time ='2018-12-03 9:00'
-SELECT @Finish_Time = '2018-12-03 18:00'
+SELECT @Start_Time =' 10:00'
+SELECT @Finish_Time = ' 18:00'
 select @A=(cast (@Time_Now as float)-floor(cast(@Time_Now as float)))-
           (cast(@Start_Time as float)-floor(cast(@Start_Time as float))),
        @B=(cast(@Time_Now as float)-floor(cast(@Time_Now as float)))-
@@ -171,14 +171,14 @@ ROLLBACK;
 END
 
 ```
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex5(1).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex5.PNG)
 
 #### Verificare și rezultate:
 ``` sql
 alter table orarul
 add pisica varchar(10)
 ```
-![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex5(2).PNG)
+![Ex1](https://github.com/speianudana/DB/blob/master/Laboratory_10/Screenshots_lab10/ex5(1).PNG)
 
 
 #### 6.Să se creeze un declanșator DDL care, la modificarea proprietatilor coloanei Id_Profesor dintr-un tabel, ar face schimbari asemănătoare în mod automat în restul tabelelor. 
